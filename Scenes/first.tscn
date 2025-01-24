@@ -7,5 +7,7 @@
 [node name="Node" type="Node" parent="."]
 
 [node name="Base1" type="Sprite2D" parent="."]
-position = Vector2(602, 550)
+position = Vector2(820, 459)
 texture = ExtResource("1_fw30e")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Base1"]

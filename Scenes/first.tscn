@@ -24,3 +24,9 @@ texture = ExtResource("2_2pnkc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base1/CharacterBody2D"]
 position = Vector2(-3, 1)
 shape = SubResource("CircleShape2D_fv3kb")
+
+[node name="Camera2D" type="Camera2D" parent="Base1/CharacterBody2D"]
+
+[node name="Container" type="Container" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

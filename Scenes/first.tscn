@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c8g23jmtilqeq"]
 
-[ext_resource type="Texture2D" uid="uid://dkj0awyqq356d" path="res://pictures/Base_1.png" id="1_fw30e"]
+[ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="2_7oqw6"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="2_ho3d7"]
 [ext_resource type="Texture2D" uid="uid://deurfyy6btes" path="res://pictures/bubble2.png" id="3_3v38d"]
@@ -43,7 +43,7 @@ radius = 16.0312
 
 [node name="Base1" type="Sprite2D" parent="."]
 position = Vector2(598, 543)
-texture = ExtResource("1_fw30e")
+texture = ExtResource("1_liqud")
 
 [node name="Area2D" type="Area2D" parent="Base1"]
 

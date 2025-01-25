@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=9 format=3 uid="uid://c8g23jmtilqeq"]
 
-[ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
-[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="2_7oqw6"]
+[ext_resource type="Texture2D" uid="uid://dkj0awyqq356d" path="res://pictures/Base_1.png" id="1_fw30e"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="2_ho3d7"]
-[ext_resource type="Texture2D" uid="uid://deurfyy6btes" path="res://pictures/bubble2.png" id="3_3v38d"]
+[ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="2_rxwgk"]
+[ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
 normal = Vector2(1, 0)
@@ -18,32 +18,17 @@ distance = -312.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_keolm"]
 distance = -115.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t45q1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ho3d7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fv3kb"]
-radius = 16.0312
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
 
 [node name="Base1" type="Sprite2D" parent="."]
 position = Vector2(598, 543)
-texture = ExtResource("1_liqud")
+texture = ExtResource("1_fw30e")
+
+[node name="Base3" type="Sprite2D" parent="Base1"]
+position = Vector2(2, 3)
+texture = ExtResource("2_rxwgk")
 
 [node name="Area2D" type="Area2D" parent="Base1"]
 
@@ -63,30 +48,20 @@ shape = SubResource("WorldBoundaryShape2D_yjsmr")
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_keolm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Base1/Area2D/StaticBody2D"]
-position = Vector2(136, 87)
-rotation = -0.174533
-scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_t45q1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base1/Area2D/StaticBody2D/AnimatedSprite2D"]
-polygon = PackedVector2Array(183.334, -66.667, 33.334, -83.334, -33.333, -83.334, -300, -83.334, -316.666, 16.666, -300, 116.666, -133.333, 133.333, 100, 116.666, 300, 50, 350, 16.666, 300, -16.667)
-
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Base1/Area2D/StaticBody2D"]
 visible = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Base1"]
-script = ExtResource("2_7oqw6")
+[node name="Bubble" parent="Base1" instance=ExtResource("3_6qlbl")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Base1/CharacterBody2D"]
-position = Vector2(-4, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("3_3v38d")
+[node name="bottle" type="Sprite2D" parent="Base1"]
+position = Vector2(136, 87)
+rotation = -0.174533
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_ho3d7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base1/CharacterBody2D"]
-position = Vector2(-8, -2)
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_fv3kb")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base1/bottle"]
+visible = false
+polygon = PackedVector2Array(183.334, -66.667, 33.334, -83.334, -33.333, -83.334, -300, -83.334, -316.666, 16.666, -300, 116.666, -133.333, 133.333, 100, 116.666, 300, 50, 350, 16.666, 300, -16.667)
 
 [node name="Camera2D" type="Camera2D" parent="Base1"]
 

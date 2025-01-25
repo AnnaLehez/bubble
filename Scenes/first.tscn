@@ -48,7 +48,7 @@ shape = SubResource("WorldBoundaryShape2D_keolm")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Base1/Area2D/StaticBody2D"]
 visible = false
 
-[node name="CharacterBody2D" parent="Base1/Area2D" instance=ExtResource("3_6qlbl")]
+[node name="Bubble" parent="Base1/Area2D" instance=ExtResource("3_6qlbl")]
 
 [node name="Camera2D" type="Camera2D" parent="Base1"]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cip6qd66jiu3l"]
+[gd_scene load_steps=5 format=3 uid="uid://cip6qd66jiu3l"]
 
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_ggrqa"]
 [ext_resource type="Texture2D" uid="uid://coogps1kbitux" path="res://pictures/Bubble_BC.tga" id="2_nm0sn"]
+[ext_resource type="Texture2D" path="res://pictures/Bubble_BC_mini.tga" id="3_2l4tm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fv3kb"]
 radius = 16.0312
@@ -13,5 +14,10 @@ script = ExtResource("1_ggrqa")
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_nm0sn")
 
+[node name="BubbleBcMini" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_2l4tm")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_fv3kb")

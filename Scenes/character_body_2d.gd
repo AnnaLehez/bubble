@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const max_speed = 70.0
+const max_speed = 50.0
 
 
 

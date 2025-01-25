@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const max_speed = 100.0
 
-
+var canPick: bool = true
 
 func _physics_process(delta: float) :
 	# Add the gravity.

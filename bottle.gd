@@ -13,5 +13,11 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	print("******** bottle catched ")
-
+	print ("body ", body, body_shape_index)
+	var bodies = $Area2D.get_overlapping_bodies()
+	print(bodies)
+	
+	for body1 in bodies:
+		print(body.name)
+	
 	pass # Replace with function body.

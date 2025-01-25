@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_lg3w7"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="2_06ugl"]
-[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="3_cktv6"]
-[ext_resource type="Texture2D" uid="uid://deurfyy6btes" path="res://pictures/bubble2.png" id="4_klpvq"]
+[ext_resource type="Script" path="res://Scenes/bubble.gd" id="3_cktv6"]
+[ext_resource type="Texture2D" path="res://pictures/bubble2.png" id="4_klpvq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
 normal = Vector2(1, 0)

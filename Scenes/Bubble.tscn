@@ -84,7 +84,7 @@ script = ExtResource("1_ggrqa")
 
 [node name="BigBubble" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(0.04, 0.04)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_nm0sn")
 
 [node name="Bubble" type="Sprite2D" parent="."]
@@ -100,7 +100,7 @@ frame = 6
 frame_progress = 0.0774297
 
 [node name="collision" type="CollisionShape2D" parent="."]
-scale = Vector2(0.55, 0.55)
+scale = Vector2(0.6, 0.6)
 shape = SubResource("CircleShape2D_fv3kb")
 
 [node name="Marker2D" type="Marker2D" parent="."]

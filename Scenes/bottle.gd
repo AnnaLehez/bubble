@@ -22,8 +22,7 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 	
 	print ("body ", body, body_shape_index)
 
-	
-	if body.name == "Bubble" and !collected:
+	if body.name == "Bubble" and !collected and body.loaded==false:
 		print("******** bottle catched ")
 		picked = true
 		picker = body
@@ -36,7 +35,7 @@ func collect():
 	print ("bottle - i am collected ", picker.position)
 	picked = false
 	collected = true
-	$Area2D/smallCollision.disabled = true
+	#$Area2D/smallCollision.disabled = true
 	$Sprite2D.visible = false
 	self.position = Vector2(-5,-5)
   

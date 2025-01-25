@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
 	queue_free()
+
+func flipFish(flip: bool) -> void:
+	var sprite = $Sprite2D
+	sprite.flip_h = flip

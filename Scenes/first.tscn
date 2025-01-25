@@ -56,7 +56,7 @@ texture = ExtResource("2_2pnkc")
 position = Vector2(-4, 1)
 shape = SubResource("CircleShape2D_fv3kb")
 
-[node name="Camera2D" type="Camera2D" parent="Base1/CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Base1"]
 
 [node name="Container" type="Container" parent="."]
 offset_right = 40.0

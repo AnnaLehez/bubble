@@ -1,16 +1,23 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const max_speed = 10.0
+const max_speed = 50.0
 
 
 
 func _physics_process(delta: float) :
 	# Add the gravity.
-	#if not is_on_floor():
-		if velocity.y >-10:
+		velocity = Vector2.ZERO
+	
+		if velocity.y >-20:
 			velocity.y -=1
+			
+	# Slow down if no movement
+		if velocity.x > 0:
+			velocity.x -=1
+			
+		if velocity.x < 0:
+			velocity.x +=1
 
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -24,7 +31,9 @@ func _physics_process(delta: float) :
 			velocity.x -= 2
 		if Input.is_action_pressed("ui_right"):
 			velocity.x += 2
-			
+		
+		if velocity.length() > 0:
+			velocity = velocity.normalized() * max_speed
 			
 		#if velocity.length() > 0:
 			#velocity = velocity.normalized()

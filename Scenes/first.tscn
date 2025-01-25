@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=9 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dkj0awyqq356d" path="res://pictures/Base_1.png" id="1_fw30e"]
 [ext_resource type="Texture2D" uid="uid://bs3way8vfoeot" path="res://pictures/bubble.png" id="2_2pnkc"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="2_7oqw6"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
+normal = Vector2(1, 0)
+distance = -488.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4yywu"]
+distance = -489.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yjsmr"]
+distance = -312.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_keolm"]
+distance = -115.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_fv3kb"]
-radius = 14.0357
+radius = 16.0312
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,6 +28,24 @@ radius = 14.0357
 position = Vector2(820, 459)
 texture = ExtResource("1_fw30e")
 
+[node name="Area2D" type="Area2D" parent="Base1"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Base1/Area2D"]
+
+[node name="LeftBund" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_cegtm")
+
+[node name="RightBound" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_4yywu")
+
+[node name="BottomBound" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_yjsmr")
+
+[node name="TopBound" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_keolm")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Base1"]
 script = ExtResource("2_7oqw6")
 
@@ -22,7 +53,7 @@ script = ExtResource("2_7oqw6")
 texture = ExtResource("2_2pnkc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base1/CharacterBody2D"]
-position = Vector2(-3, 1)
+position = Vector2(-4, 1)
 shape = SubResource("CircleShape2D_fv3kb")
 
 [node name="Camera2D" type="Camera2D" parent="Base1/CharacterBody2D"]

@@ -1,46 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://crpvcdb74brc"]
+[gd_scene load_steps=4 format=3 uid="uid://crpvcdb74brc"]
 
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="1_f0mgh"]
 [ext_resource type="Script" path="res://bottle.gd" id="2_hijuo"]
-[ext_resource type="Script" path="res://litter.gd" id="3_vcc3o"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_t45q1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_f0mgh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_do8ey"]
-radius = 87.45
-height = 330.63
+radius = 7.89027
+height = 28.6063
 
-[node name="bottle" type="AnimatedSprite2D"]
+[node name="bottle" type="RigidBody2D"]
 position = Vector2(136, 87)
 rotation = -0.174533
-scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_t45q1")
+gravity_scale = 0.0
 script = ExtResource("2_hijuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_f0mgh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="smallCollision" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3, 20)
+position = Vector2(-2.14326, 0.63751)
 rotation = -1.56207
 shape = SubResource("CapsuleShape2D_do8ey")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
-polygon = PackedVector2Array(183.334, -66.667, 33.334, -83.334, -33.333, -83.334, -300, -83.334, -316.666, 16.666, -300, 116.666, -133.333, 133.333, 100, 116.666, 300, 50, 350, 16.666, 300, -16.667)
-script = ExtResource("3_vcc3o")
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

@@ -28,6 +28,7 @@ texture = ExtResource("1_liqud")
 [node name="Area2D" type="Area2D" parent="Base1"]
 
 [node name="bottle" parent="Base1/Area2D" instance=ExtResource("2_ve02g")]
+position = Vector2(74, 39)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Base1/Area2D"]
 

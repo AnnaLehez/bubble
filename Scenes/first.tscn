@@ -1,21 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=9 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
-[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="2_7oqw6"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="2_ho3d7"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
-normal = Vector2(1, 0)
-distance = -488.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4yywu"]
-distance = -489.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yjsmr"]
-distance = -312.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_keolm"]
-distance = -115.0
+[ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t45q1"]
 animations = [{
@@ -33,11 +20,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_18hho"]
-load_path = "res://.godot/imported/bubble2.png-5ff3ffe92576e44e13286531b161fca3.ctex"
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
+normal = Vector2(1, 0)
+distance = -488.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fv3kb"]
-radius = 16.0312
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4yywu"]
+distance = -489.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yjsmr"]
+distance = -312.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_keolm"]
+distance = -115.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -48,6 +42,15 @@ position = Vector2(598, 543)
 texture = ExtResource("1_liqud")
 
 [node name="Area2D" type="Area2D" parent="Base1"]
+
+[node name="bottle" type="AnimatedSprite2D" parent="Base1/Area2D"]
+position = Vector2(136, 87)
+rotation = -0.174533
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_t45q1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base1/Area2D/bottle"]
+polygon = PackedVector2Array(183.334, -66.667, 33.334, -83.334, -33.333, -83.334, -300, -83.334, -316.666, 16.666, -300, 116.666, -133.333, 133.333, 100, 116.666, 300, 50, 350, 16.666, 300, -16.667)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Base1/Area2D"]
 
@@ -65,30 +68,10 @@ shape = SubResource("WorldBoundaryShape2D_yjsmr")
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_keolm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Base1/Area2D/StaticBody2D"]
-position = Vector2(136, 87)
-rotation = -0.174533
-scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_t45q1")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base1/Area2D/StaticBody2D/AnimatedSprite2D"]
-polygon = PackedVector2Array(183.334, -66.667, 33.334, -83.334, -33.333, -83.334, -300, -83.334, -316.666, 16.666, -300, 116.666, -133.333, 133.333, 100, 116.666, 300, 50, 350, 16.666, 300, -16.667)
-
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Base1/Area2D/StaticBody2D"]
 visible = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Base1"]
-script = ExtResource("2_7oqw6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Base1/CharacterBody2D"]
-position = Vector2(-4, 0)
-scale = Vector2(2, 2)
-texture = SubResource("CompressedTexture2D_18hho")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base1/CharacterBody2D"]
-position = Vector2(-8, -2)
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_fv3kb")
+[node name="CharacterBody2D" parent="Base1/Area2D" instance=ExtResource("3_6qlbl")]
 
 [node name="Camera2D" type="Camera2D" parent="Base1"]
 

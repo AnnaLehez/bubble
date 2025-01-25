@@ -88,7 +88,6 @@ scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_nm0sn")
 
 [node name="BubbleBcMini" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("3_2l4tm")
 
@@ -97,6 +96,9 @@ visible = false
 shape = SubResource("CircleShape2D_fv3kb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_f7knt")
-frame_progress = 0.849538
+autoplay = "default"
+frame = 6
+frame_progress = 0.0774297

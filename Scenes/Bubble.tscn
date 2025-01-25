@@ -83,6 +83,7 @@ radius = 16.0312
 script = ExtResource("1_ggrqa")
 
 [node name="BigBubble" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_nm0sn")
 

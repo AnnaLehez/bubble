@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cip6qd66jiu3l"]
 
-[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_ggrqa"]
+[ext_resource type="Script" path="res://Scenes/bubble.gd" id="1_ggrqa"]
 [ext_resource type="Texture2D" uid="uid://coogps1kbitux" path="res://pictures/Bubble_BC.tga" id="2_nm0sn"]
 [ext_resource type="Texture2D" uid="uid://g2hilmn2ptuj" path="res://pictures/Bubble_BC_mini.tga" id="3_2l4tm"]
 [ext_resource type="Texture2D" uid="uid://b15d5r5p40b5v" path="res://pictures/anim_bubble.png" id="4_e07wa"]

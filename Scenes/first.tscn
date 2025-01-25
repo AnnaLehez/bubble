@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=11 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
+[ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
 [ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://bottle.tscn" id="2_ve02g"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
+[ext_resource type="Script" path="res://Scenes/ship_area.gd" id="3_gqete"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
+radius = 24.0
+height = 148.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
 normal = Vector2(1, 0)
@@ -26,27 +32,36 @@ position = Vector2(598, 543)
 texture = ExtResource("1_liqud")
 
 [node name="Area2D" type="Area2D" parent="Base1"]
+script = ExtResource("2_0h4fr")
+
+[node name="ShipArea" type="Area2D" parent="Base1/Area2D"]
+script = ExtResource("3_gqete")
+
+[node name="Ship" type="CollisionShape2D" parent="Base1/Area2D/ShipArea"]
+position = Vector2(0, -120)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wl0bo")
 
 [node name="bottle" parent="Base1/Area2D" instance=ExtResource("2_ve02g")]
 position = Vector2(74, 39)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Base1/Area2D"]
+[node name="WorldBounds" type="StaticBody2D" parent="Base1/Area2D"]
 
-[node name="LeftBund" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+[node name="LeftBund" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
 shape = SubResource("WorldBoundaryShape2D_cegtm")
 
-[node name="RightBound" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+[node name="RightBound" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_4yywu")
 
-[node name="BottomBound" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+[node name="BottomBound" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
 shape = SubResource("WorldBoundaryShape2D_yjsmr")
 
-[node name="TopBound" type="CollisionShape2D" parent="Base1/Area2D/StaticBody2D"]
+[node name="TopBound" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_keolm")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Base1/Area2D/StaticBody2D"]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Base1/Area2D/WorldBounds"]
 visible = false
 
 [node name="Bubble" parent="Base1/Area2D" instance=ExtResource("3_6qlbl")]
@@ -56,3 +71,5 @@ visible = false
 [node name="Container" type="Container" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="body_shape_entered" from="Base1/Area2D/ShipArea" to="Base1/Area2D" method="_on_ship_area_body_shape_entered"]

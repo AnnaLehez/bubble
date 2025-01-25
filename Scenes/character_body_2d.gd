@@ -47,7 +47,7 @@ func _physics_process(delta: float) :
 			
 		var current_speed = velocity.length()
 			# Print speed to the console
-		print("Current Speed: ", current_speed)
+		#print("Current Speed: ", current_speed)
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

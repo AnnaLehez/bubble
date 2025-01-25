@@ -5,6 +5,7 @@ const max_speed = 100.0
 
 var canPick: bool = true
 
+
 func _physics_process(delta: float) :
 	# Add the gravity.
 		velocity = Vector2.ZERO
@@ -62,3 +63,8 @@ func _physics_process(delta: float) :
 
 
 		move_and_slide()
+		
+func pickLitter() :
+	canPick = false
+	$BigBubble.visible = true
+	$Bubble.visible = false

@@ -36,12 +36,10 @@ script = ExtResource("2_hijuo")
 [node name="smallCollision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-3, 20)
 rotation = -1.56207
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_do8ey")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(183.334, -66.667, 33.334, -83.334, -33.333, -83.334, -300, -83.334, -316.666, 16.666, -300, 116.666, -133.333, 133.333, 100, 116.666, 300, 50, 350, 16.666, 300, -16.667)
 script = ExtResource("3_vcc3o")
 

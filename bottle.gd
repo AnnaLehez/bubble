@@ -20,7 +20,11 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 	var bodies = $Area2D.get_overlapping_bodies()
 	print(bodies)
 	
+	if body.name == "Bubble":
+		body.pickLitter()
+		
 	for body1 in bodies:
 		print(body.name)
+		
 	
 	pass # Replace with function body.

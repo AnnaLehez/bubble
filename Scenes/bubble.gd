@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 
 const max_speed = 100.0
+const loaded_speed = 80.0
 
-var canPick: bool = true
+var loaded: bool = false
+var captured:Node2D
 
 
 func _physics_process(delta: float) :
@@ -33,8 +35,11 @@ func _physics_process(delta: float) :
 		if Input.is_action_pressed("ui_right"):
 			velocity.x += 2
 		
+		var speed = max_speed
+		if loaded:
+			speed = loaded_speed
 		if velocity.length() > 0:
-			velocity = velocity.normalized() * max_speed
+			velocity = velocity.normalized() * speed
 			
 		#if velocity.length() > 0:
 			#velocity = velocity.normalized()
@@ -61,10 +66,19 @@ func _physics_process(delta: float) :
 	# Calculate current speed
 		
 
-
 		move_and_slide()
 		
-func pickLitter() :
-	canPick = false
+func pickLitter(litter:Node2D) :
+	loaded = true
+	captured = litter
+	
 	$BigBubble.visible = true
 	$Bubble.visible = false
+	print("Bubble: *** catched " + litter.name)
+
+	
+func releaseLitter() :
+	loaded = false
+	captured = null
+	$BigBubble.visible = false
+	$Bubble.visible = true

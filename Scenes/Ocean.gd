@@ -13,9 +13,10 @@ func _process(delta: float) -> void:
 
 func _on_ship_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	
-	if body.name == "Bubble":
+	if body.name == "Bubble" and body.loaded:
 		print("Litter collected ! ")
-		#body.captured.capture.collect()
+		
+		body.captured.collect()
 		body.releaseLitter()
 		
 

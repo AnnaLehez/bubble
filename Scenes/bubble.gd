@@ -4,7 +4,7 @@ extends CharacterBody2D
 const max_speed = 100.0
 const loaded_speed = 80.0
 
-var loaded: bool = true
+var loaded: bool = false
 var captured:Node2D
 
 

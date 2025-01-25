@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
-[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://bottle.tscn" id="2_ve02g"]
+[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/bottle.tscn" id="2_ve02g"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
 [ext_resource type="Script" path="res://Scenes/ship_area.gd" id="3_gqete"]
 

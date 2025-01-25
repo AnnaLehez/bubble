@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://2q6y500hmy4d"]
+[gd_scene load_steps=13 format=3 uid="uid://2q6y500hmy4d"]
 
 [ext_resource type="Script" path="res://Scenes/FishFolder/first_for_fish.gd" id="1_ce86k"]
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_lg3w7"]
 [ext_resource type="PackedScene" uid="uid://bbe4qc107mae0" path="res://Scenes/FishFolder/FishBaseNew.tscn" id="2_3wgax"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="2_06ugl"]
-[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="3_cktv6"]
 [ext_resource type="Texture2D" uid="uid://g2hilmn2ptuj" path="res://pictures/Bubble_BC_mini.tga" id="4_klpvq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
@@ -47,7 +46,7 @@ point_count = 5
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ce86k")
-mob_scene = ExtResource("2_3wgax")
+fish_scene = ExtResource("2_3wgax")
 
 [node name="Node" type="Node" parent="."]
 
@@ -87,7 +86,6 @@ visible = false
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Base1"]
 visible = false
-script = ExtResource("3_cktv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Base1/CharacterBody2D"]
 position = Vector2(-4, 0)
@@ -108,6 +106,6 @@ offset_bottom = 40.0
 [node name="FishPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_w74t6")
 
-[node name="MobSpawnLocation" type="PathFollow2D" parent="FishPath"]
+[node name="FishSpawnLocation" type="PathFollow2D" parent="FishPath"]
 position = Vector2(1080, 448)
 rotation = 1.5708

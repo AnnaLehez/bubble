@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dkj0awyqq356d" path="res://pictures/Base_1.png" id="1_fw30e"]
-[ext_resource type="Texture2D" uid="uid://bs3way8vfoeot" path="res://pictures/bubble.png" id="2_2pnkc"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="2_7oqw6"]
+[ext_resource type="Texture2D" uid="uid://deurfyy6btes" path="res://pictures/bubble2.png" id="3_3v38d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
 normal = Vector2(1, 0)
@@ -50,10 +50,13 @@ shape = SubResource("WorldBoundaryShape2D_keolm")
 script = ExtResource("2_7oqw6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Base1/CharacterBody2D"]
-texture = ExtResource("2_2pnkc")
+position = Vector2(-4, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("3_3v38d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base1/CharacterBody2D"]
-position = Vector2(-4, 1)
+position = Vector2(-8, -2)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_fv3kb")
 
 [node name="Camera2D" type="Camera2D" parent="Base1"]

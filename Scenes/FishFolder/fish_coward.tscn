@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwqacy6c4gr07"]
+[gd_scene load_steps=4 format=3 uid="uid://c63llsxutj6ar"]
 
-[ext_resource type="Script" path="res://Scenes/FishFolder/fish_ataker.gd" id="1_ijq3k"]
-[ext_resource type="Texture2D" uid="uid://ci63cqjoh4gb8" path="res://pictures/fish_5.webp" id="2_vq1w1"]
+[ext_resource type="Script" path="res://Scenes/FishFolder/fish_coward.gd" id="1_51j0q"]
+[ext_resource type="Texture2D" uid="uid://cxii8ty83an70" path="res://pictures/fish_3.webp" id="2_spx2l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhm0v"]
-radius = 87.0
-height = 340.0
+radius = 33.0
+height = 173.333
 
-[node name="FishAtaker" type="RigidBody2D"]
+[node name="FishCoward" type="RigidBody2D"]
 mass = 0.001
 gravity_scale = 0.0
-script = ExtResource("1_ijq3k")
+script = ExtResource("1_51j0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.17)
-texture = ExtResource("2_vq1w1")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_spx2l")
 flip_h = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

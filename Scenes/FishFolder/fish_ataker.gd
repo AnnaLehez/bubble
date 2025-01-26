@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var detection_radius: float = 300  # Радиус обнаружения цели
+@export var detection_radius: float = 200  # Радиус обнаружения цели
 @export var speed: float = 70  # Скорость движения
 @export var random_direction_interval: float = 3.0  # Время смены случайного направления
 
@@ -12,7 +12,7 @@ func _ready():
 			# Попытка найти target динамически
 	var parent_scene = get_parent()  # Получаем родительскую сцену (море)
 	if parent_scene:
-		target = parent_scene.get_node_or_null("Base1/Area2D/Bubble")  # Ищем узел bubble
+		target = parent_scene.get_node_or_null("MainLevel/Area2D/Bubble")  # Ищем узел bubble
 		if target:
 			print("Target (bubble) найден:", target.name)
 			if target.has_signal("body_entered"):

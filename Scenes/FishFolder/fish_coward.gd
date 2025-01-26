@@ -19,7 +19,7 @@ func _ready():
 	# Попытка найти target динамически
 	var parent_scene = get_parent()  # Получаем родительскую сцену (море)
 	if parent_scene:
-		target = parent_scene.get_node_or_null("Base1/Area2D/Bubble")  # Ищем узел bubble
+		target = parent_scene.get_node_or_null("MainLevel/Area2D/Bubble")  # Ищем узел bubble
 		if target:
 			print("Target (bubble) найден:", target.name)
 		else:

@@ -129,3 +129,7 @@ offset_bottom = 40.0
 
 [connection signal="body_shape_entered" from="MainLevel/Area2D/ShipArea" to="MainLevel/Area2D" method="_on_ship_area_body_shape_entered"]
 [connection signal="trashCollected" from="MainLevel/Area2D/bottle" to="MainLevel" method="_on_bottle_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/boot" to="MainLevel" method="_on_boot_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/Bag1" to="MainLevel" method="_on_bag_1_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/Bag2" to="MainLevel" method="_on_bag_2_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/Phone" to="MainLevel" method="_on_phone_trash_collected"]

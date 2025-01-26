@@ -6,24 +6,12 @@ var fishVar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawnFish()
+	pass
+	#spawnFish()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	var bubble = get_node_or_null("Base1/Area2D/Bubble")
-	if bubble:
-		
-		var direction = (bubble.global_position - fishVar.global_position).normalized()
-		var velocity = direction * 60
-		fishVar.linear_velocity = velocity
-		
-		var result = bubble.global_position.x - fishVar.global_position.x > 0
-		if result:
-			fishVar.flipFish(true)
-		else :
-			fishVar.flipFish(false)
-		
+	pass		
 	
 
 func spawnFish() ->void:
@@ -40,10 +28,10 @@ func spawnFish() ->void:
 	# Set the mob's position to a random location.
 	fish.position = fish_spawn_location.position
 
-	# Add some randomness to the direction.
+	# Add some randomness to the"res://Scenes/FishFolder/fish_ataker.tscn" direction.
 	direction += randf_range(-PI / 4, PI / 4)
 	fish.rotation = direction
-	
+	"res://Scenes/FishFolder/fish_ataker.tscn"
 		# Choose the velocity for the mob.
 	var velocity = Vector2(60, 0.0)
 	fish.linear_velocity = velocity.rotated(direction)

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/FishFolder/second_for_fish.gd" id="1_67bds"]
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_eiom7"]
-[ext_resource type="PackedScene" uid="uid://bbe4qc107mae0" path="res://Scenes/FishFolder/FishBaseNew.tscn" id="2_fjlgo"]
-[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/Bottle.tscn" id="2_nj5fg"]
+[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/bottle.tscn" id="2_nj5fg"]
+[ext_resource type="PackedScene" uid="uid://cwqacy6c4gr07" path="res://Scenes/FishFolder/fish_ataker.tscn" id="2_s8g6i"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_d63iu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]
@@ -27,7 +27,7 @@ point_count = 5
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_67bds")
-fish_scene = ExtResource("2_fjlgo")
+fish_scene = ExtResource("2_s8g6i")
 
 [node name="Node" type="Node" parent="."]
 
@@ -72,3 +72,5 @@ curve = SubResource("Curve2D_fhava")
 [node name="FishSpawnLocation" type="PathFollow2D" parent="FishPath"]
 position = Vector2(1080, 448)
 rotation = 1.5708
+
+[node name="FishBaseNew" parent="." instance=ExtResource("2_s8g6i")]

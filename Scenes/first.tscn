@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=38 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c63llsxutj6ar" path="res://Scenes/FishFolder/fish_coward.tscn" id="18_kla1p"]
 [ext_resource type="PackedScene" uid="uid://drxrlm2kpfn1q" path="res://Scenes/FishFolder/fish_coward_1.tscn" id="19_eftto"]
 [ext_resource type="Texture2D" uid="uid://vxlny0ejuye1" path="res://pictures/Base_4.png" id="20_ibyo7"]
+[ext_resource type="Texture2D" uid="uid://cveteon2y4p1p" path="res://pictures/anim_cloud.png" id="21_y2sfd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
 radius = 24.0
@@ -39,6 +40,77 @@ distance = -312.0
 distance = -115.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mj2ac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpgel"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(0, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjabq"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(341, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq3k8"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(682, 0, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjhy8"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(0, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoiic"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(341, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r1l4"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(682, 341, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6ncs"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(0, 682, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtqrl"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(341, 682, 341, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noxlq"]
+atlas = ExtResource("21_y2sfd")
+region = Rect2(682, 682, 341, 341)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rp2lw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpgel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjabq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq3k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjhy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoiic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r1l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6ncs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtqrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noxlq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -168,6 +240,20 @@ position = Vector2(264, 560)
 [node name="Base4" type="Sprite2D" parent="."]
 position = Vector2(208, 765)
 texture = ExtResource("20_ibyo7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+use_parent_material = true
+position = Vector2(261, 229)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_rp2lw")
+frame = 3
+frame_progress = 0.581188
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(1111.67, 4.99997)
+sprite_frames = SubResource("SpriteFrames_rp2lw")
+frame = 3
+frame_progress = 0.581188
 
 [connection signal="body_shape_entered" from="MainLevel/Area2D/ShipArea" to="MainLevel/Area2D" method="_on_ship_area_body_shape_entered"]
 [connection signal="trashCollected" from="MainLevel/Area2D/bottle" to="MainLevel" method="_on_bottle_trash_collected"]

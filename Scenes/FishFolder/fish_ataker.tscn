@@ -8,6 +8,7 @@ radius = 43.0
 height = 160.0
 
 [node name="FishAtaker" type="RigidBody2D"]
+collision_layer = 2
 mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_ijq3k")
@@ -19,8 +20,14 @@ flip_h = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D_1" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.3)
+shape = SubResource("CapsuleShape2D_rhm0v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D_2" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 0.09)
 shape = SubResource("CapsuleShape2D_rhm0v")
 
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

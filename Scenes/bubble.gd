@@ -84,7 +84,8 @@ func pickLitter(litter:Node2D) :
 	print("Bubble: *** catched " + litter.name)
 
 func pop():
-	releaseLitter()	
+	if loaded:
+		releaseLitter()	
 	self.position = Vector2(0,-90)
 	emit_signal("poped")
 	

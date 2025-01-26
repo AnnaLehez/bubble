@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var detection_radius: float = 200  # Радиус обнаружения цели
 @export var speed: float = 70  # Скорость движения
+@export var max_speed: float = 110  # Скорость движения
 @export var random_direction_interval: float = 3.0  # Время смены случайного направления
 
 var target: Node2D  # Цель, которая будет найдена динамически
@@ -15,12 +16,10 @@ func _ready():
 		target = parent_scene.get_node_or_null("MainLevel/Area2D/Bubble")  # Ищем узел bubble
 		if target:
 			print("Target (bubble) найден:", target.name)
-			if target.has_signal("body_entered"):
-				target.connect("body_entered", Callable(self, "_on_target_collision"))
-			else:
-				print("У Target нет сигнала body_entered")
 		else:
 			print("Target (bubble) не найден.")
+	
+	$Area2D.connect("body_entered", Callable(self, "_on_body_collision"))
 
 func _physics_process(delta):
 	
@@ -37,7 +36,7 @@ func _physics_process(delta):
 func react_to_target(delta):
 	var direction = (target.global_position - global_position).normalized()
 	rotate_towards(direction)
-	linear_velocity = direction * speed  # Двигаемся к цели
+	linear_velocity = direction * max_speed  # Двигаемся к цели
 
 func move_randomly(delta):
 	random_direction_timer -= delta
@@ -67,9 +66,9 @@ func _integrate_forces(state):
 		current_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 		random_direction_timer = random_direction_interval
 
-func _on_target_collision(body):
+func _on_body_collision(body):
 	if body == target:
-		if target.has_method("popup"):  # Проверяем, есть ли у target метод popup
-			target.popup()
-		else:
-			print("У цели нет метода 'popup'!")
+		print("Коллизия с целью!")
+		if target.has_method("pop"):
+			target.pop()
+			self.position = Vector2(-90,0)

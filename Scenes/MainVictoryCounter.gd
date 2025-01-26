@@ -62,11 +62,11 @@ func _on_bag_1_trash_collected(name: Variant) -> void:
 
 
 func _on_bubble_poped() -> void:
-	
-	$UnhappySeals/SealNeedHelp.visible=!$UnhappySeals/SealNeedHelp.visible
-	$UnhappySeals/SealDisapointed.visible=!$UnhappySeals/SealDisapointed.visible
-	$UnhappySeals.visible=true
-	$UnhappySeals/Timer.start()
+	if victoryPoints<5
+		$UnhappySeals/SealNeedHelp.visible=!$UnhappySeals/SealNeedHelp.visible
+		$UnhappySeals/SealDisapointed.visible=!$UnhappySeals/SealDisapointed.visible
+		$UnhappySeals.visible=true
+		$UnhappySeals/Timer.start()
 	#var tween = create_tween()
 	#tween.tween_property($UnhappySeals)
 	

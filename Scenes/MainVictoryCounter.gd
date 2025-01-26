@@ -62,6 +62,8 @@ func _on_bubble_poped() -> void:
 	$UnhappySeals/SealDisapointed.visible=!$UnhappySeals/SealDisapointed.visible
 	$UnhappySeals.visible=true
 	$UnhappySeals/Timer.start()
+	#var tween = create_tween()
+	#tween.tween_property($UnhappySeals)
 	
 
 

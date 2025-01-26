@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=22 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dqtuoxx0p607f" path="res://pictures/Bag_1.png" id="11_ygk5w"]
 [ext_resource type="Texture2D" uid="uid://ck5v857ubnc82" path="res://pictures/Boot_1.webp" id="12_dxh73"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="13_sadl0"]
+[ext_resource type="Texture2D" uid="uid://dtvv2vfptcsn0" path="res://pictures/tulen_happy.png" id="14_8ehh5"]
+[ext_resource type="Texture2D" uid="uid://b108b6r875lan" path="res://pictures/tulen_needHelp.png" id="15_iovn0"]
+[ext_resource type="Texture2D" uid="uid://dfd7567gw34kj" path="res://pictures/tulen_disappointed.png" id="16_a47c5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
 radius = 24.0
@@ -123,6 +126,25 @@ position = Vector2(394, 436)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("13_sadl0")
 
+[node name="HappySeal" type="Sprite2D" parent="MainLevel"]
+visible = false
+texture = ExtResource("14_8ehh5")
+
+[node name="Timer" type="Timer" parent="MainLevel/HappySeal"]
+
+[node name="UnhappySeals" type="Node2D" parent="MainLevel"]
+visible = false
+
+[node name="Timer" type="Timer" parent="MainLevel/UnhappySeals"]
+wait_time = 2.0
+
+[node name="SealDisapointed" type="Sprite2D" parent="MainLevel/UnhappySeals"]
+texture = ExtResource("16_a47c5")
+
+[node name="SealNeedHelp" type="Sprite2D" parent="MainLevel/UnhappySeals"]
+visible = false
+texture = ExtResource("15_iovn0")
+
 [node name="Container" type="Container" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -133,3 +155,5 @@ offset_bottom = 40.0
 [connection signal="trashCollected" from="MainLevel/Area2D/Bag1" to="MainLevel" method="_on_bag_1_trash_collected"]
 [connection signal="trashCollected" from="MainLevel/Area2D/Bag2" to="MainLevel" method="_on_bag_2_trash_collected"]
 [connection signal="trashCollected" from="MainLevel/Area2D/Phone" to="MainLevel" method="_on_phone_trash_collected"]
+[connection signal="poped" from="MainLevel/Area2D/Bubble" to="MainLevel" method="_on_bubble_poped"]
+[connection signal="timeout" from="MainLevel/UnhappySeals/Timer" to="MainLevel" method="_on_timer_timeout"]

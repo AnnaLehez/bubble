@@ -6,7 +6,7 @@ const loaded_speed = 120.0
 
 var loaded: bool = false
 var trash:Node2D
-
+signal poped
 
 func _physics_process(delta: float) :
 	# Add the gravity.
@@ -86,6 +86,7 @@ func pickLitter(litter:Node2D) :
 func pop():
 	releaseLitter()	
 	self.position = Vector2(0,-90)
+	emit_signal("poped")
 	
 func releaseLitter() :
 	loaded = false

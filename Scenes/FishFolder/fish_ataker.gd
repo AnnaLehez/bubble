@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var detection_radius: float = 200  # Радиус обнаружения цели
 @export var speed: float = 70  # Скорость движения
-@export var max_speed: float = 110  # Скорость движения
+@export var max_speed: float = 100  # Скорость движения
 @export var random_direction_interval: float = 3.0  # Время смены случайного направления
 
 var target: Node2D  # Цель, которая будет найдена динамически

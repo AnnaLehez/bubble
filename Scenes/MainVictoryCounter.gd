@@ -62,7 +62,7 @@ func _on_bag_1_trash_collected(name: Variant) -> void:
 
 
 func _on_bubble_poped() -> void:
-	if victoryPoints<5
+	if victoryPoints<5:
 		$UnhappySeals/SealNeedHelp.visible=!$UnhappySeals/SealNeedHelp.visible
 		$UnhappySeals/SealDisapointed.visible=!$UnhappySeals/SealDisapointed.visible
 		$UnhappySeals.visible=true

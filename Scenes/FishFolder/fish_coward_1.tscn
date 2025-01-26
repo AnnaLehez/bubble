@@ -1,21 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c63llsxutj6ar"]
+[gd_scene load_steps=4 format=3 uid="uid://drxrlm2kpfn1q"]
 
-[ext_resource type="Script" path="res://Scenes/FishFolder/fish_coward.gd" id="1_51j0q"]
-[ext_resource type="Texture2D" uid="uid://cxii8ty83an70" path="res://pictures/fish_3.webp" id="2_spx2l"]
+[ext_resource type="Script" path="res://Scenes/FishFolder/fish_coward_1.gd" id="1_o7ov2"]
+[ext_resource type="Texture2D" uid="uid://c8wykstdfpxkw" path="res://pictures/fish_6.png" id="2_tt6r0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhm0v"]
-radius = 17.0
-height = 86.6667
+radius = 26.0
+height = 100.0
 
-[node name="FishCoward" type="RigidBody2D"]
+[node name="FishCoward_1" type="RigidBody2D"]
 mass = 0.001
 gravity_scale = 0.0
-script = ExtResource("1_51j0q")
+script = ExtResource("1_o7ov2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_spx2l")
-flip_h = true
+texture = ExtResource("2_tt6r0")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 

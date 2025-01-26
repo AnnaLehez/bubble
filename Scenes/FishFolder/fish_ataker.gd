@@ -62,7 +62,7 @@ func rotate_towards(direction: Vector2):
 		$Sprite2D.flip_h = true
 
 func _integrate_forces(state):
-	if linear_velocity.length() < speed * 0.5:  # Если столкнулись с препятствием
+	if linear_velocity.length() < speed * 0.8:  # Если столкнулись с препятствием
 		# Меняем направление случайным образом
 		current_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 		random_direction_timer = random_direction_interval

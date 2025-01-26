@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ci63cqjoh4gb8" path="res://pictures/fish_5.webp" id="2_vq1w1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhm0v"]
-radius = 87.0
-height = 340.0
+radius = 43.0
+height = 160.0
 
 [node name="FishAtaker" type="RigidBody2D"]
 mass = 0.001
@@ -13,7 +13,7 @@ gravity_scale = 0.0
 script = ExtResource("1_ijq3k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.17)
+scale = Vector2(0.1, 0.085)
 texture = ExtResource("2_vq1w1")
 flip_h = true
 

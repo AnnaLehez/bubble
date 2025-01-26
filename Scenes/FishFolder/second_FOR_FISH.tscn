@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/FishFolder/second_for_fish.gd" id="1_67bds"]
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_eiom7"]
-[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/bottle.tscn" id="2_nj5fg"]
-[ext_resource type="PackedScene" uid="uid://cwqacy6c4gr07" path="res://Scenes/FishFolder/fish_ataker.tscn" id="2_s8g6i"]
+[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/TrashFolder/Bottle.tscn" id="2_nj5fg"]
+[ext_resource type="PackedScene" path="res://Scenes/FishFolder/fish_ataker.tscn" id="2_s8g6i"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_d63iu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cegtm"]

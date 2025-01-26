@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnq04l2cf0i78"]
 
-[ext_resource type="Script" path="res://Scenes/bottle.gd" id="1_vgxqm"]
-[ext_resource type="Texture2D" uid="uid://baeh0gkbtl7cp" path="res://pictures/Bag_1.webp" id="2_us45c"]
+[ext_resource type="Script" path="res://Scenes/TrashFolder/Trash.gd" id="1_vgxqm"]
+[ext_resource type="Texture2D" uid="uid://dqtuoxx0p607f" path="res://pictures/Bag_1.png" id="2_pw1f7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6de5"]
 size = Vector2(28.7469, 26.4757)
@@ -14,7 +14,7 @@ script = ExtResource("1_vgxqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.07, 0.07)
-texture = ExtResource("2_us45c")
+texture = ExtResource("2_pw1f7")
 
 [node name="Area2D" type="Area2D" parent="."]
 

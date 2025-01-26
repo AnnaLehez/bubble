@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
-[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/Bottle.tscn" id="2_ve02g"]
+[ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/TrashFolder/Bottle.tscn" id="2_ve02g"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
 [ext_resource type="Script" path="res://Scenes/ship_area.gd" id="3_gqete"]
-[ext_resource type="PackedScene" uid="uid://dclqxnibyhepj" path="res://Scenes/Boot.tscn" id="5_fs1va"]
-[ext_resource type="PackedScene" uid="uid://bnq04l2cf0i78" path="res://Scenes/Bag.tscn" id="6_1quj5"]
-[ext_resource type="PackedScene" uid="uid://dnrtt61goha1s" path="res://Scenes/Phone.tscn" id="6_lj8o3"]
+[ext_resource type="PackedScene" uid="uid://dclqxnibyhepj" path="res://Scenes/TrashFolder/Boot.tscn" id="5_fs1va"]
+[ext_resource type="PackedScene" uid="uid://bnq04l2cf0i78" path="res://Scenes/TrashFolder/Bag.tscn" id="6_1quj5"]
+[ext_resource type="PackedScene" uid="uid://dnrtt61goha1s" path="res://Scenes/TrashFolder/Phone.tscn" id="6_lj8o3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
 radius = 24.0

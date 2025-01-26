@@ -24,7 +24,6 @@ boot_splash/icon="res://ship.png"
 
 window/size/viewport_width=1200
 window/size/viewport_height=1100
-window/size/borderless=true
 
 [editor]
 

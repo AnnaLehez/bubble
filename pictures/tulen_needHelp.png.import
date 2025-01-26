@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b108b6r875lan"
-path="res://.godot/imported/tulen_3.png-3b912a4c99c9489fe16e385d64b1e2e1.ctex"
+path="res://.godot/imported/tulen_needHelp.png-14a512c6a4208e35656fc2d560a9e81c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/tulen_3.png"
-dest_files=["res://.godot/imported/tulen_3.png-3b912a4c99c9489fe16e385d64b1e2e1.ctex"]
+source_file="res://pictures/tulen_needHelp.png"
+dest_files=["res://.godot/imported/tulen_needHelp.png-14a512c6a4208e35656fc2d560a9e81c.ctex"]
 
 [params]
 

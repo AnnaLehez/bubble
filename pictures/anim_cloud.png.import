@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtvv2vfptcsn0"
-path="res://.godot/imported/tulen_1.png-6ec125be7113fb2a3eed9d44582f9b72.ctex"
+uid="uid://cveteon2y4p1p"
+path="res://.godot/imported/anim_cloud.png-d4ce76b42b7dce24682af85ebb60b32b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/tulen_1.png"
-dest_files=["res://.godot/imported/tulen_1.png-6ec125be7113fb2a3eed9d44582f9b72.ctex"]
+source_file="res://pictures/anim_cloud.png"
+dest_files=["res://.godot/imported/anim_cloud.png-d4ce76b42b7dce24682af85ebb60b32b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfd7567gw34kj"
-path="res://.godot/imported/tulen_2.png-0d89d836af058a02f2c682d6a8cd9339.ctex"
+uid="uid://dtvv2vfptcsn0"
+path="res://.godot/imported/tulen_happy.png-a10ce77d94267be7662497d42eb56485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/tulen_2.png"
-dest_files=["res://.godot/imported/tulen_2.png-0d89d836af058a02f2c682d6a8cd9339.ctex"]
+source_file="res://pictures/tulen_happy.png"
+dest_files=["res://.godot/imported/tulen_happy.png-a10ce77d94267be7662497d42eb56485.ctex"]
 
 [params]
 

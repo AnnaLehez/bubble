@@ -4,6 +4,8 @@ var picked = false
 var collected = false
 var picker:Node2D
 
+signal trashCollected(name)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if picked == true:
@@ -40,5 +42,6 @@ func collect():
 	collected = true
 	#$Area2D/smallCollision.disabled = true
 	$Sprite2D.visible = false
-	self.position = Vector2(-5,-5)
+	self.position = Vector2(-700,-5)
+	emit_signal("trashCollected",self)
   

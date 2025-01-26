@@ -6,23 +6,23 @@ const loaded_speed = 120.0
 
 var loaded: bool = false
 var trash:Node2D
-
+signal poped
 
 func _physics_process(delta: float) :
 	# Add the gravity.
 		var currentSpeed1 = velocity.length()
-		print("Current Speed start: ", currentSpeed1)
+		#print("Current Speed start: ", currentSpeed1)
 
 		velocity = Vector2.ZERO
-		print("Current Position: ", self.position)
+		#print("Current Position: ", self.position)
 	
 		if velocity.y>-10 and 1>velocity.y and !loaded:
-			print("Current Speed in vertical aligner: ", velocity.length())
+			#print("Current Speed in vertical aligner: ", velocity.length())
 			
 
 			velocity.y -=0.05
-			print("Up Speed: ", velocity.y)
-			print("Velocity normalized: ", velocity.normalized())
+			#print("Up Speed: ", velocity.y)
+			#print("Velocity normalized: ", velocity.normalized())
 			
 	# Slow down if no movement
 		if velocity.x > 0:
@@ -60,7 +60,7 @@ func _physics_process(delta: float) :
 			
 		var current_speed = velocity.length()
 			# Print speed to the console
-		print("Current Speed: ", velocity.length())
+		#print("Current Speed: ", velocity.length())
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -86,6 +86,7 @@ func pickLitter(litter:Node2D) :
 func pop():
 	releaseLitter()	
 	self.position = Vector2(0,-90)
+	emit_signal("poped")
 	
 func releaseLitter() :
 	loaded = false

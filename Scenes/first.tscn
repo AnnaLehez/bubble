@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=23 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
-[ext_resource type="Script" path="res://Scenes/base_1.gd" id="2_rfyla"]
+[ext_resource type="Script" path="res://Scenes/MainVictoryCounter.gd" id="2_87xud"]
 [ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/TrashFolder/Bottle.tscn" id="2_ve02g"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
 [ext_resource type="Script" path="res://Scenes/ship_area.gd" id="3_gqete"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dqtuoxx0p607f" path="res://pictures/Bag_1.png" id="11_ygk5w"]
 [ext_resource type="Texture2D" uid="uid://ck5v857ubnc82" path="res://pictures/Boot_1.webp" id="12_dxh73"]
 [ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="13_sadl0"]
+[ext_resource type="Texture2D" uid="uid://dtvv2vfptcsn0" path="res://pictures/tulen_happy.png" id="14_8ehh5"]
+[ext_resource type="Texture2D" uid="uid://b108b6r875lan" path="res://pictures/tulen_needHelp.png" id="15_iovn0"]
+[ext_resource type="Texture2D" uid="uid://dfd7567gw34kj" path="res://pictures/tulen_disappointed.png" id="16_a47c5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
 radius = 24.0
@@ -31,95 +34,129 @@ distance = -312.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_keolm"]
 distance = -115.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mj2ac"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
 
-[node name="Base1" type="Sprite2D" parent="."]
+[node name="MainLevel" type="Sprite2D" parent="."]
 position = Vector2(598, 543)
 texture = ExtResource("1_liqud")
-script = ExtResource("2_rfyla")
+script = ExtResource("2_87xud")
 
-[node name="Area2D" type="Area2D" parent="Base1"]
+[node name="Area2D" type="Area2D" parent="MainLevel"]
 script = ExtResource("2_0h4fr")
 
-[node name="ShipArea" type="Area2D" parent="Base1/Area2D"]
+[node name="ShipArea" type="Area2D" parent="MainLevel/Area2D"]
 script = ExtResource("3_gqete")
 
-[node name="Ship" type="CollisionShape2D" parent="Base1/Area2D/ShipArea"]
+[node name="Ship" type="CollisionShape2D" parent="MainLevel/Area2D/ShipArea"]
 position = Vector2(0, -120)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wl0bo")
 
-[node name="bottle" parent="Base1/Area2D" instance=ExtResource("2_ve02g")]
+[node name="bottle" parent="MainLevel/Area2D" instance=ExtResource("2_ve02g")]
 position = Vector2(99, 39)
 
-[node name="boot" parent="Base1/Area2D" instance=ExtResource("5_fs1va")]
+[node name="boot" parent="MainLevel/Area2D" instance=ExtResource("5_fs1va")]
 position = Vector2(335, -34)
 
-[node name="Bag1" parent="Base1/Area2D" instance=ExtResource("6_1quj5")]
+[node name="Bag1" parent="MainLevel/Area2D" instance=ExtResource("6_1quj5")]
 position = Vector2(385, 196)
 
-[node name="Bag2" parent="Base1/Area2D" instance=ExtResource("6_1quj5")]
+[node name="Bag2" parent="MainLevel/Area2D" instance=ExtResource("6_1quj5")]
 position = Vector2(-306, 131)
 rotation = 0.675442
 
-[node name="Phone" parent="Base1/Area2D" instance=ExtResource("6_lj8o3")]
+[node name="Phone" parent="MainLevel/Area2D" instance=ExtResource("6_lj8o3")]
 position = Vector2(-341, -23)
 
-[node name="WorldBounds" type="StaticBody2D" parent="Base1/Area2D"]
+[node name="WorldBounds" type="StaticBody2D" parent="MainLevel/Area2D"]
 
-[node name="LeftBund" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
+[node name="LeftBund" type="CollisionShape2D" parent="MainLevel/Area2D/WorldBounds"]
 shape = SubResource("WorldBoundaryShape2D_cegtm")
 
-[node name="RightBound" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
+[node name="RightBound" type="CollisionShape2D" parent="MainLevel/Area2D/WorldBounds"]
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_4yywu")
 
-[node name="BottomBound" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
+[node name="BottomBound" type="CollisionShape2D" parent="MainLevel/Area2D/WorldBounds"]
 shape = SubResource("WorldBoundaryShape2D_yjsmr")
 
-[node name="TopBound" type="CollisionShape2D" parent="Base1/Area2D/WorldBounds"]
+[node name="TopBound" type="CollisionShape2D" parent="MainLevel/Area2D/WorldBounds"]
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_keolm")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Base1/Area2D/WorldBounds"]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MainLevel/Area2D/WorldBounds"]
 visible = false
 
-[node name="Bubble" parent="Base1/Area2D" instance=ExtResource("3_6qlbl")]
+[node name="Bubble" parent="MainLevel/Area2D" instance=ExtResource("3_6qlbl")]
 
-[node name="Camera2D" type="Camera2D" parent="Base1"]
+[node name="Camera2D" type="Camera2D" parent="MainLevel"]
 
-[node name="Trashbar" type="Area2D" parent="Base1"]
+[node name="Trashbar" type="Area2D" parent="MainLevel"]
 
-[node name="Phone" type="Sprite2D" parent="Base1/Trashbar"]
+[node name="Phone" type="Sprite2D" parent="MainLevel/Trashbar"]
+visible = false
 position = Vector2(-389, 439)
 rotation = 1.5708
 scale = Vector2(0.16, 0.165)
 texture = ExtResource("10_qk3p6")
 
-[node name="Bag1" type="Sprite2D" parent="Base1/Trashbar"]
+[node name="Bag1" type="Sprite2D" parent="MainLevel/Trashbar"]
+visible = false
 position = Vector2(-175, 443)
 scale = Vector2(0.082, 0.085)
 texture = ExtResource("11_ygk5w")
 
-[node name="Bag2" type="Sprite2D" parent="Base1/Trashbar"]
+[node name="Bag2" type="Sprite2D" parent="MainLevel/Trashbar"]
+visible = false
 position = Vector2(-94, 443)
 scale = Vector2(0.085, 0.086)
 texture = ExtResource("11_ygk5w")
 
-[node name="Boot" type="Sprite2D" parent="Base1/Trashbar"]
+[node name="Boot" type="Sprite2D" parent="MainLevel/Trashbar"]
+visible = false
 position = Vector2(127, 446)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("12_dxh73")
 
-[node name="Bottle" type="Sprite2D" parent="Base1/Trashbar"]
+[node name="Bottle" type="Sprite2D" parent="MainLevel/Trashbar"]
+visible = false
 position = Vector2(394, 436)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("13_sadl0")
+
+[node name="HappySeal" type="Sprite2D" parent="MainLevel"]
+visible = false
+texture = ExtResource("14_8ehh5")
+
+[node name="Timer" type="Timer" parent="MainLevel/HappySeal"]
+
+[node name="UnhappySeals" type="Node2D" parent="MainLevel"]
+visible = false
+
+[node name="Timer" type="Timer" parent="MainLevel/UnhappySeals"]
+wait_time = 2.0
+
+[node name="SealDisapointed" type="Sprite2D" parent="MainLevel/UnhappySeals"]
+material = SubResource("ShaderMaterial_mj2ac")
+texture = ExtResource("16_a47c5")
+
+[node name="SealNeedHelp" type="Sprite2D" parent="MainLevel/UnhappySeals"]
+visible = false
+texture = ExtResource("15_iovn0")
 
 [node name="Container" type="Container" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="body_shape_entered" from="Base1/Area2D/ShipArea" to="Base1/Area2D" method="_on_ship_area_body_shape_entered"]
+[connection signal="body_shape_entered" from="MainLevel/Area2D/ShipArea" to="MainLevel/Area2D" method="_on_ship_area_body_shape_entered"]
+[connection signal="trashCollected" from="MainLevel/Area2D/bottle" to="MainLevel" method="_on_bottle_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/boot" to="MainLevel" method="_on_boot_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/Bag1" to="MainLevel" method="_on_bag_1_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/Bag2" to="MainLevel" method="_on_bag_2_trash_collected"]
+[connection signal="trashCollected" from="MainLevel/Area2D/Phone" to="MainLevel" method="_on_phone_trash_collected"]
+[connection signal="poped" from="MainLevel/Area2D/Bubble" to="MainLevel" method="_on_bubble_poped"]
+[connection signal="timeout" from="MainLevel/UnhappySeals/Timer" to="MainLevel" method="_on_timer_timeout"]

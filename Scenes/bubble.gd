@@ -84,6 +84,7 @@ func pickLitter(litter:Node2D) :
 	print("Bubble: *** catched " + litter.name)
 
 func pop():
+	$"24e2d7Eac96d361".play()
 	if loaded:
 		releaseLitter()	
 	self.position = Vector2(0,-90)

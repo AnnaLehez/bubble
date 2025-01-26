@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dtvv2vfptcsn0" path="res://pictures/tulen_happy.png" id="14_8ehh5"]
 [ext_resource type="Texture2D" uid="uid://b108b6r875lan" path="res://pictures/tulen_needHelp.png" id="15_iovn0"]
 [ext_resource type="Texture2D" uid="uid://dfd7567gw34kj" path="res://pictures/tulen_disappointed.png" id="16_a47c5"]
-[ext_resource type="PackedScene" uid="uid://cwqacy6c4gr07" path="res://Scenes/FishFolder/fish_ataker.tscn" id="17_jga0f"]
-[ext_resource type="PackedScene" uid="uid://c63llsxutj6ar" path="res://Scenes/FishFolder/fish_coward.tscn" id="18_kla1p"]
-[ext_resource type="PackedScene" uid="uid://drxrlm2kpfn1q" path="res://Scenes/FishFolder/fish_coward_1.tscn" id="19_eftto"]
+[ext_resource type="PackedScene" path="res://Scenes/FishFolder/fish_ataker.tscn" id="17_jga0f"]
+[ext_resource type="PackedScene" path="res://Scenes/FishFolder/fish_coward.tscn" id="18_kla1p"]
+[ext_resource type="PackedScene" path="res://Scenes/FishFolder/fish_coward_1.tscn" id="19_eftto"]
 [ext_resource type="Texture2D" uid="uid://vxlny0ejuye1" path="res://pictures/Base_4.png" id="20_ibyo7"]
 [ext_resource type="Texture2D" uid="uid://cveteon2y4p1p" path="res://pictures/anim_cloud.png" id="21_y2sfd"]
 

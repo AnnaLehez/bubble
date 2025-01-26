@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cip6qd66jiu3l"]
+[gd_scene load_steps=17 format=3 uid="uid://cip6qd66jiu3l"]
 
 [ext_resource type="Script" path="res://Scenes/bubble.gd" id="1_ggrqa"]
 [ext_resource type="Texture2D" uid="uid://coogps1kbitux" path="res://pictures/Bubble_BC.tga" id="2_nm0sn"]
 [ext_resource type="Texture2D" uid="uid://g2hilmn2ptuj" path="res://pictures/Bubble_BC_mini.tga" id="3_2l4tm"]
 [ext_resource type="Texture2D" uid="uid://b15d5r5p40b5v" path="res://pictures/anim_bubble.png" id="4_e07wa"]
+[ext_resource type="AudioStream" uid="uid://difaojuluir23" path="res://pictures/24e2d7eac96d361.mp3" id="5_18tx1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6w6e2"]
 atlas = ExtResource("4_e07wa")
@@ -102,5 +103,8 @@ frame_progress = 0.0774297
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(0.6, 0.6)
 shape = SubResource("CircleShape2D_fv3kb")
+
+[node name="24e2d7Eac96d361" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_18tx1")
 
 [node name="Marker2D" type="Marker2D" parent="."]

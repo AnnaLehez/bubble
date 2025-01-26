@@ -71,4 +71,4 @@ func _on_body_collision(body):
 		print("Коллизия с целью!")
 		if target.has_method("pop"):
 			target.pop()
-			self.position = Vector2(-90,0)
+			self.position = Vector2(280,800)

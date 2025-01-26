@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Bubble"
+config/name="Bubble Volunteer"
+config/description="Our game is designed to draw attention to the global issue of ocean pollution. We invite you to embark on an exciting journey where your mission is to clean the ocean of debris testing new experimental technology and help save marine life. A ship filled with volunteers has arrived to assist in cleaning the ocean, adding to the effort.
+But be careful! Not all fish realize that the bubble is there to help, and some will try to pop it. You must avoid collisions, as the game ends if the bubble bursts.
+This theme is especially close to our hearts because we deeply care about marine life and want to contribute to preserving our planet."
+config/version="1.0"
 run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://ship.png"
+boot_splash/icon="res://ship.png"
 
 [display]
 

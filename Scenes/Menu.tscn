@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://buqe246xvterm"]
+[gd_scene load_steps=3 format=3 uid="uid://buqe246xvterm"]
 
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_gd050"]
 [ext_resource type="Texture2D" uid="uid://c2w8e1a76mrrw" path="res://pictures/MM.png" id="1_t225s"]
 
 [node name="Menu" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_gd050")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(514, 552)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_t225s")
 
-[node name="Button" type="Button" parent="Area2D/Sprite2D"]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Button" type="Button" parent="Area2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 184.0
+offset_top = 724.0
+offset_right = 857.0
+offset_bottom = 1068.0
+
+[connection signal="pressed" from="Area2D/Button" to="Area2D" method="_on_button_pressed"]

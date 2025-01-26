@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=27 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cwqacy6c4gr07" path="res://Scenes/FishFolder/fish_ataker.tscn" id="17_jga0f"]
 [ext_resource type="PackedScene" uid="uid://c63llsxutj6ar" path="res://Scenes/FishFolder/fish_coward.tscn" id="18_kla1p"]
 [ext_resource type="PackedScene" uid="uid://drxrlm2kpfn1q" path="res://Scenes/FishFolder/fish_coward_1.tscn" id="19_eftto"]
+[ext_resource type="Texture2D" uid="uid://vxlny0ejuye1" path="res://pictures/Base_4.png" id="20_ibyo7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
 radius = 24.0
@@ -163,6 +164,10 @@ position = Vector2(842, 665)
 
 [node name="FishCoward_1" parent="." instance=ExtResource("19_eftto")]
 position = Vector2(264, 560)
+
+[node name="Base4" type="Sprite2D" parent="."]
+position = Vector2(208, 765)
+texture = ExtResource("20_ibyo7")
 
 [connection signal="body_shape_entered" from="MainLevel/Area2D/ShipArea" to="MainLevel/Area2D" method="_on_ship_area_body_shape_entered"]
 [connection signal="trashCollected" from="MainLevel/Area2D/bottle" to="MainLevel" method="_on_bottle_trash_collected"]

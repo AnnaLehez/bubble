@@ -1,5 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=39 format=3 uid="uid://c8g23jmtilqeq"]
 
+[ext_resource type="AudioStream" uid="uid://b5ssvlh5rhwf" path="res://pictures/karabel.wav" id="1_0i0f7"]
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
 [ext_resource type="Script" path="res://Scenes/MainVictoryCounter.gd" id="2_87xud"]
@@ -113,6 +114,10 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Karabel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_0i0f7")
+autoplay = true
 
 [node name="Node" type="Node" parent="."]
 

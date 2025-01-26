@@ -5,27 +5,33 @@ const max_speed = 150.0
 const loaded_speed = 120.0
 
 var loaded: bool = false
-var captured:Node2D
+var trash:Node2D
 
 
 func _physics_process(delta: float) :
 	# Add the gravity.
+		var currentSpeed1 = velocity.length()
+		print("Current Speed start: ", currentSpeed1)
+
 		velocity = Vector2.ZERO
+		print("Current Position: ", self.position)
 	
-		if velocity.y >-20:
-			velocity.y -=1
+		if velocity.y>-10 and 1>velocity.y and !loaded:
+			print("Current Speed in vertical aligner: ", velocity.length())
+			
+
+			velocity.y -=0.05
+			print("Up Speed: ", velocity.y)
+			print("Velocity normalized: ", velocity.normalized())
 			
 	# Slow down if no movement
 		if velocity.x > 0:
-			velocity.x -=1
+			velocity.x -=0.5
 			
 		if velocity.x < 0:
-			velocity.x +=1
+			velocity.x +=0.5
 
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-		
+	
 		if Input.is_action_pressed("ui_up"):
 			velocity.y -= 2
 		if Input.is_action_pressed("ui_down"):
@@ -35,11 +41,12 @@ func _physics_process(delta: float) :
 		if Input.is_action_pressed("ui_right"):
 			velocity.x += 2
 		
-		var speed = max_speed
+		
+		var speed1 = max_speed
 		if loaded:
-			speed = loaded_speed
+			speed1 = loaded_speed
 		if velocity.length() > 0:
-			velocity = velocity.normalized() * speed
+			velocity = velocity.normalized() * speed1
 			
 		#if velocity.length() > 0:
 			#velocity = velocity.normalized()
@@ -53,7 +60,7 @@ func _physics_process(delta: float) :
 			
 		var current_speed = velocity.length()
 			# Print speed to the console
-		#print("Current Speed: ", current_speed)
+		print("Current Speed: ", velocity.length())
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -70,15 +77,20 @@ func _physics_process(delta: float) :
 		
 func pickLitter(litter:Node2D) :
 	loaded = true
-	captured = litter
+	trash = litter
 	
 	$BigBubble.visible = true
 	$Bubble.visible = false
 	print("Bubble: *** catched " + litter.name)
 
+func pop():
+	releaseLitter()	
+	self.position = Vector2(0,-90)
 	
 func releaseLitter() :
 	loaded = false
-	captured = null
+	trash.picked = false
 	$BigBubble.visible = false
 	$Bubble.visible = true
+	
+	

@@ -28,6 +28,9 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		picker = body
 		body.pickLitter(self)
 		
+	if body.name == "Bubble" and !collected and !picked and body.loaded==true :
+		body.pop()
+		
 
 func collect():
 	#$Sprite2D.visible = false

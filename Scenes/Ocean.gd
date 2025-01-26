@@ -16,7 +16,7 @@ func _on_ship_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_in
 	if body.name == "Bubble" and body.loaded:
 		print("Litter collected ! ")
 		
-		body.captured.collect()
+		body.trash.collect()
 		body.releaseLitter()
 		
 

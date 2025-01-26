@@ -1,13 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8g23jmtilqeq"]
+[gd_scene load_steps=19 format=3 uid="uid://c8g23jmtilqeq"]
 
 [ext_resource type="Texture2D" uid="uid://dahnnt5tc40se" path="res://pictures/Base_3.png" id="1_liqud"]
 [ext_resource type="Script" path="res://Scenes/Ocean.gd" id="2_0h4fr"]
+[ext_resource type="Script" path="res://Scenes/base_1.gd" id="2_rfyla"]
 [ext_resource type="PackedScene" uid="uid://crpvcdb74brc" path="res://Scenes/TrashFolder/Bottle.tscn" id="2_ve02g"]
 [ext_resource type="PackedScene" uid="uid://cip6qd66jiu3l" path="res://Scenes/Bubble.tscn" id="3_6qlbl"]
 [ext_resource type="Script" path="res://Scenes/ship_area.gd" id="3_gqete"]
 [ext_resource type="PackedScene" uid="uid://dclqxnibyhepj" path="res://Scenes/TrashFolder/Boot.tscn" id="5_fs1va"]
 [ext_resource type="PackedScene" uid="uid://bnq04l2cf0i78" path="res://Scenes/TrashFolder/Bag.tscn" id="6_1quj5"]
 [ext_resource type="PackedScene" uid="uid://dnrtt61goha1s" path="res://Scenes/TrashFolder/Phone.tscn" id="6_lj8o3"]
+[ext_resource type="Texture2D" uid="uid://ymmb232yvk6k" path="res://pictures/phone.webp" id="10_qk3p6"]
+[ext_resource type="Texture2D" uid="uid://dqtuoxx0p607f" path="res://pictures/Bag_1.png" id="11_ygk5w"]
+[ext_resource type="Texture2D" uid="uid://ck5v857ubnc82" path="res://pictures/Boot_1.webp" id="12_dxh73"]
+[ext_resource type="Texture2D" uid="uid://cxtg8wdjpj5tq" path="res://pictures/bottle_1.png" id="13_sadl0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wl0bo"]
 radius = 24.0
@@ -33,6 +38,7 @@ distance = -115.0
 [node name="Base1" type="Sprite2D" parent="."]
 position = Vector2(598, 543)
 texture = ExtResource("1_liqud")
+script = ExtResource("2_rfyla")
 
 [node name="Area2D" type="Area2D" parent="Base1"]
 script = ExtResource("2_0h4fr")
@@ -83,6 +89,34 @@ visible = false
 [node name="Bubble" parent="Base1/Area2D" instance=ExtResource("3_6qlbl")]
 
 [node name="Camera2D" type="Camera2D" parent="Base1"]
+
+[node name="Trashbar" type="Area2D" parent="Base1"]
+
+[node name="Phone" type="Sprite2D" parent="Base1/Trashbar"]
+position = Vector2(-389, 439)
+rotation = 1.5708
+scale = Vector2(0.16, 0.165)
+texture = ExtResource("10_qk3p6")
+
+[node name="Bag1" type="Sprite2D" parent="Base1/Trashbar"]
+position = Vector2(-175, 443)
+scale = Vector2(0.082, 0.085)
+texture = ExtResource("11_ygk5w")
+
+[node name="Bag2" type="Sprite2D" parent="Base1/Trashbar"]
+position = Vector2(-94, 443)
+scale = Vector2(0.085, 0.086)
+texture = ExtResource("11_ygk5w")
+
+[node name="Boot" type="Sprite2D" parent="Base1/Trashbar"]
+position = Vector2(127, 446)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("12_dxh73")
+
+[node name="Bottle" type="Sprite2D" parent="Base1/Trashbar"]
+position = Vector2(394, 436)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("13_sadl0")
 
 [node name="Container" type="Container" parent="."]
 offset_right = 40.0

@@ -9,9 +9,8 @@
 script = ExtResource("1_gd050")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(514, 552)
-scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_t225s")
+centered = false
 
 [node name="Button" type="Button" parent="Area2D"]
 modulate = Color(1, 1, 1, 0)
